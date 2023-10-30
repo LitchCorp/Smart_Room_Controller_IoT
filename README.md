@@ -1,59 +1,90 @@
 # Smart_Room_Controller_IoT
 
-The IoT Classroom Control System is a Particle Photon-based project that combines various IoT devices, including Wemo switches, Hue lightbulbs, ultrasonic sensors, PIR sensors, and a button hook, to create a smart classroom control system. This system can be used to control lighting, alert systems, and more in a classroom or similar environment.
+# Key Reminder Device
 
-## Table of Contents
+## Overview
 
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+The Key Reminder Device is designed to help people remember to hang up their keys when they get home and take their keys with them before leaving the house. It uses a combination of sensors, a button, and IoT integration to provide reminders and automate certain actions.
 
-## Features
+The main features of this project include:
+- Displaying welcome and goodbye messages on an OLED display.
+- Activating WeMo switches to control lights or appliances.
+- Controlling Hue lightbulbs.
+- Using an ultrasonic sensor to detect proximity.
+- Utilizing passive infrared (PIR) sensors to detect movement.
+- Sounding a buzzer as a reminder.
+- Integrating IoT capabilities for remote control.
 
-- Control Wemo switches to manage electrical devices in the classroom.
-- Activate/deactivate lighting for Hue lightbulbs.
-- Monitor the classroom environment using ultrasonic and PIR sensors.
-- Display status and messages on an OLED screen.
-- Customize system behavior using a button hook interface.
+## Components Utilized
 
-## Prerequisites
+This project involves several components:
 
-Before you begin, ensure you have met the following requirements:
+- Particle Photon 2: This is the main controller responsible for managing the sensors, buttons, and IoT devices.
+- Adafruit SSD1306 OLED Display: A small OLED display to show welcome and goodbye messages.
+- Button: A button for manual control and user interaction.
+- Ultrasonic Sensor: Used to detect proximity to the device.
+- Passive Infrared (PIR) Sensors: Detects motion within their range.
+- Buzzer: Provides audio reminders.
+- WeMo Switches: Controlled via the Particle Photon for managing lights or appliances.
+- Hue Lightbulbs: Controlled through the Hue API to manage lighting.
+- WiFi Connection: Provides internet connectivity to integrate IoT capabilities.
 
-- A Particle Photon device.
-- Wi-Fi connectivity for IoT devices.
-- Wemo switches and Hue lightbulbs.
-- Ultrasonic sensors and PIR sensors.
-- A button hook for user input.
-- An OLED display for user feedback.
+## Setup and Installation
 
-## Getting Started
+Follow these steps to set up the Key Reminder Device:
 
-1. Clone this repository to your Particle Photon device.
-2. Install the necessary libraries and dependencies for Wemo switches, Hue lightbulbs, and OLED display.
-3. Connect your IoT devices to the Particle Photon.
-4. Configure the Wi-Fi credentials for your network.
-5. Upload the code to the Particle Photon.
+1. **Hardware Connections:**
+    - Connect all the components to your Particle Photon 2 according to the wiring diagram provided in your project's documentation.
+    - Ensure the OLED display is correctly connected to the Photon.
+
+2. **Particle Photon Setup:**
+    - Make sure your Particle Photon is set up and connected to the internet.
+    - Upload the provided code to the Photon using Particle Workbench or the Particle Web IDE.
+    - ![backmid](/photos/backmid.jpg)
+3. **OLED Display:**
+    - Install any necessary libraries for the OLED display.
+    - Adjust the display settings and text messages according to your preferences.
+
+4. **WeMo Switches:**
+    - Set up your WeMo switches and ensure they are connected to your local network.
+    - Update the code with your specific WeMo switch details.
+
+5. **Hue Lightbulbs:**
+    - Ensure your Hue lightbulbs are set up and connected to your Hue Bridge.
+    - Update the code with your specific Hue Bridge details.
+
+6. **IoT Network:**
+    - Modify the WiFi settings in the code to connect to your IoT network.
+
+7. **Compile and Upload:**
+    - Compile and upload the code to your Particle Photon 2.
+
+8. **Power On:**
+    - Power on the device and ensure it connects to the IoT network.
 
 ## Usage
 
-1. Power on your Particle Photon device.
-2. The system initializes, displaying a welcome message on the OLED screen.
-3. Use the button hook to activate the classroom control system. The Wemo switches, Hue lightbulbs, and sensors will respond to user input.
-4. Deactivate the system by using the button hook. Wemo switches and Hue lightbulbs return to their default states.
-5. The system monitors the classroom environment using the ultrasonic and PIR sensors, activating a buzzer under specific conditions.
+Once the device is set up and running, here's how it works:
 
-## Contributing
+- When you enter your home and don't press and hold the button, the device will detect your proximity using the ultrasonic sensor and check for motion using PIR sensors.
+- If the right conditions are met (e.g., proximity and PIR sensor activation), the buzzer will remind you to hang up your keys.
 
-1. Fork the project.
-2. Create a new branch for your feature (`git checkout -b feature/your-feature-name`).
-3. Commit your changes (`git commit -m 'Add some feature'`).
-4. Push to the branch (`git push origin feature/your-feature-name`).
-5. Open a pull request.
+- When you leave your home and don't press and hold the button, the device will again check for conditions using the ultrasonic sensor and PIR sensors.
+- If the right conditions are met, the buzzer will remind you to take your keys with you.
+
+- If you press and hold the button when entering, the device will display a welcome message and activate WeMo switches and Hue lightbulbs.
+- If you press and hold the button when leaving, the device will display a goodbye message and deactivate WeMo switches and Hue lightbulbs.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+This project was developed as part of the IoT Classroom at CNM Ingenuity DeepDive IOT Bootcamp. Special thanks to our instructors and collaborators for their guidance and support.
+
+## Contact
+
+For questions or inquiries about this project, please contact Joshua Benavidez at joshua.n.benavidez@gmail.com.
+
+---

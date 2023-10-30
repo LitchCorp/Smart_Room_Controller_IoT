@@ -40,7 +40,7 @@ Follow these steps to set up the Key Reminder Device:
 2. **Particle Photon Setup:**
     - Make sure your Particle Photon is set up and connected to the internet.
     - Upload the provided code to the Photon using Particle Workbench or the Particle Web IDE.
-    - ![backmid](/photos/backmid.jpg)
+    - ![IMG_1469](/photos/IMG_1469.jpeg)
 3. **OLED Display:**
     - Install any necessary libraries for the OLED display.
     - Adjust the display settings and text messages according to your preferences.
